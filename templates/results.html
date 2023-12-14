@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Results</h1>
+    <p>User Input: {{ user_input }}</p>
+    <h2>Enhanced Summary:</h2>
+    <p>{{ enhanced_summary }}</p>
+    <h2>Named Entities:</h2>
+    <ul>
+        {% for entity in entities %}
+            <li>{{ entity[0] }} ({{ entity[1] }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Publication Information:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Publication Year</th>
+                <th>Publication Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for info in publication_info %}
+                <tr>
+                    <td>{{ info['Publication Year'] }}</td>
+                    <td>{{ info['Publication Link'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>Accuracy: {{ accuracy * 100 }}%</p>
+</body>
+</html>
